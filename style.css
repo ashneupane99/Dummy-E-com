@@ -1,0 +1,120 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+}
+.wrapper{
+    display: grid;
+    gap: 10px;
+    grid-template-areas: 
+    "h1 h1 h1"
+    "header header header"
+    "banner banner b1"
+    "banner banner b2"
+    "sm main main"
+    "tags main main"
+    "recent main main"
+    "footer footer footer";
+   
+}
+.wrapper > *{ /* {  * sign will focus all child of wrapper  */
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+h1{
+    background: blue;
+    color: white;
+    grid-area: h1;
+    margin: 0;
+
+}
+header{
+ background: green;
+ color: white;
+ grid-area: header;
+}
+.banner{
+    min-height: 10vh;
+    /* following code gives color gradient */
+    background: linear-gradient(to right, blue,maroon, red );    
+    grid-area: banner;
+}
+.side-box1{
+background: purple;
+grid-area: b1;
+}
+
+.side-box2{
+background: orange;
+grid-area: b2;
+}
+.side-menu{
+background: yellowgreen;
+grid-area: sm;
+}
+.tags{
+background: maroon;
+grid-area: tags;
+}
+.recent{
+    background: pink;
+    grid-area: recent;
+
+}
+.main{
+min-height: 400px;
+background: radial-gradient(red 30%, white 5%, blue);
+grid-area: main;
+}
+.footer{
+background: grey;
+color: white;
+grid-area: footer;
+}
+
+/* tablets */
+/* @media (768px <= width < 1250px){ */
+@media (768px <= width < 1250px) {
+   
+   
+.wrapper{
+    display: grid;
+    gap: 10px;
+    grid-template-areas: 
+    "h1 h1"
+    "header header"
+    "b1 b2"
+    "banner banner"
+    "sm sm"
+    "main main"
+    "tags recent"
+    "footer footer";
+   
+} 
+   
+ 
+
+}
+/* mobile  */
+@media (0 <= width < 768px) {
+    .wrapper {
+        display: grid;
+        gap: 10px;
+        grid-template-areas: 
+        "header  "
+        "h1 "
+        "banner  "
+        "b1 "
+        "b2"
+        "sm"
+        "main"
+        "recent "
+        "tags"
+        "footer";
+       
+    }
+}
